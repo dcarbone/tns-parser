@@ -1,0 +1,30 @@
+{
+    "name": "dcarbone/tns-parser",
+    "type": "library",
+    "description": "Oracle tnsnames.ora file / string parser written in PHP",
+    "license": "GPL-2.0",
+    "homepage": "https://github.com/dcarbone/tns-parser",
+    "authors": [
+        {
+            "name": "Daniel Carbone",
+            "email": "daniel.p.carbone@gmail.com"
+        }
+    ],
+    "keywords": [
+        "oracle",
+        "tns",
+        "tnsnames",
+        "tnsnames.ora",
+        "tns names"
+    ],
+
+    "require": {
+        "php" : ">=5.3.3"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "DCarbone\\": "src/"
+        }
+    }
+}
