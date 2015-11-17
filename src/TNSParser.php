@@ -34,7 +34,7 @@ else
 /**
  * Class TNSParser
  */
-class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, \JsonSerializable
+class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, JsonSerializable
 {
     /** @var array */
     private $_entries = array();
