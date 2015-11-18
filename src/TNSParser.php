@@ -291,13 +291,8 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
     /**
      * Whether a offset exists
      * @link http://php.net/manual/en/arrayaccess.offsetexists.php
-     * @param mixed $offset <p>
-     * An offset to check for.
-     * </p>
-     * @return boolean true on success or false on failure.
-     * </p>
-     * <p>
-     * The return value will be casted to boolean if non-boolean was returned.
+     * @param mixed $offset An offset to check for.
+     * @return boolean true on success or false on failure. The return value will be casted to boolean if non-boolean was returned.
      * @since 5.0.0
      */
     public function offsetExists($offset)
@@ -308,9 +303,7 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
     /**
      * Offset to retrieve
      * @link http://php.net/manual/en/arrayaccess.offsetget.php
-     * @param mixed $offset <p>
-     * The offset to retrieve.
-     * </p>
+     * @param mixed $offset The offset to retrieve.
      * @return mixed Can return all value types.
      * @since 5.0.0
      */
@@ -325,12 +318,8 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
     /**
      * Offset to set
      * @link http://php.net/manual/en/arrayaccess.offsetset.php
-     * @param mixed $offset <p>
-     * The offset to assign the value to.
-     * </p>
-     * @param mixed $value <p>
-     * The value to set.
-     * </p>
+     * @param mixed $offset The offset to assign the value to.
+     * @param mixed $value The value to set.
      * @return void
      * @since 5.0.0
      */
@@ -342,24 +331,19 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
     /**
      * Offset to unset
      * @link http://php.net/manual/en/arrayaccess.offsetunset.php
-     * @param mixed $offset <p>
-     * The offset to unset.
-     * </p>
+     * @param mixed $offset The offset to unset.
      * @return void
      * @since 5.0.0
      */
     public function offsetUnset($offset)
     {
-        throw new \BadMethodCallException('Not allowed ot unset values on this object');
+        throw new \BadMethodCallException('Not allowed to unset values on this object');
     }
 
     /**
      * Count elements of an object
      * @link http://php.net/manual/en/countable.count.php
-     * @return int The custom count as an integer.
-     * </p>
-     * <p>
-     * The return value is cast to an integer.
+     * @return int The custom count as an integer. The return value is cast to an integer.
      * @since 5.1.0
      */
     public function count()
@@ -385,9 +369,7 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
     /**
      * Constructs the object
      * @link http://php.net/manual/en/serializable.unserialize.php
-     * @param string $serialized <p>
-     * The string representation of the object.
-     * </p>
+     * @param string $serialized The string representation of the object.
      * @return void
      * @since 5.1.0
      */
