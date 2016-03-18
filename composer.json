@@ -2,7 +2,7 @@
     "name": "dcarbone/tns-parser",
     "type": "library",
     "description": "Oracle tnsnames.ora file / string parser written in PHP",
-    "license": "GPL-2.0",
+    "license": "Apache-2.0",
     "homepage": "https://github.com/dcarbone/tns-parser",
     "authors": [
         {
