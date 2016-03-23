@@ -155,9 +155,9 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
      * @param string $term
      * @return array
      */
-    public function search($term)
+    public function search($term, $caseSensitive = false)
     {
-        $term = sprintf('{%s}Si', $term);
+        $term = sprintf('{%s}S%s', $term, $caseSensitive ? '' : 'i');
         $matched = array();
         foreach($this->_searchMap as $name=>$values)
         {
