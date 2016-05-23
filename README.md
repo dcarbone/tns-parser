@@ -1,6 +1,8 @@
 # tns-parser
 Oracle tnsnames.ora file / string parser written in PHP
 
+[![Build Status](https://travis-ci.org/dcarbone/tns-parser.svg?branch=master)](https://travis-ci.org/dcarbone/tns-parser)
+
 # Installation
 
 This library is designed to be installed using [Composer](https://getcomposer.org/).
