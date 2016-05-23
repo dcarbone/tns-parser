@@ -1,0 +1,26 @@
+SCOTT =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (LOAD_BALANCE = off)
+      (FAILOVER = ON)
+      (ADDRESS = (PROTOCOL = TCP)(HOST = scottcloud.aws.cloud03.local)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (service_name = SCOTT)
+    )
+)
+
+TIGER =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (LOAD_BALANCE = off)
+      (FAILOVER = ON)
+      (ADDRESS = (PROTOCOL = TCP)(HOST =tigercloud.aws.cloud02.local)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (service_name = TIGER)
+    )
+)
+
+
+# This is a comment

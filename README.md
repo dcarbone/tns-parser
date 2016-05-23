@@ -149,19 +149,19 @@ foreach($matched as $name)
 var_export($entries);
 /*
 array (
-  'DESCRIPTION' => 
+  'DESCRIPTION' =>
   array (
-    'ADDRESS_LIST' => 
+    'ADDRESS_LIST' =>
     array (
-      'ADDRESS' => 
+      'ADDRESS' =>
       array (
-        0 => 
+        0 =>
         array (
           'PROTOCOL' => 'TCP',
           'HOST' => 'me2.db.myself.net',
           'PORT' => '12345',
         ),
-        1 => 
+        1 =>
         array (
           'PROTOCOL' => 'TCP',
           'HOST' => 'me25.db.myself.net',
@@ -172,11 +172,11 @@ array (
       'FAILOVER' => 'on',
       'ENABLE' => 'broken',
     ),
-    'CONNECT_DATA' => 
+    'CONNECT_DATA' =>
     array (
       'SID' => 'AWESOME2',
       'SERVER' => 'dedicated',
-      'FAILOVER_MODE' => 
+      'FAILOVER_MODE' =>
       array (
         'TYPE' => 'select',
         'METHOD' => 'basic',
@@ -246,4 +246,5 @@ For the moment this library serves my needs, however if anybody using this libra
 improvements / modifications made, please let me know!
 
 ## Tests
-...should probably do that.
+
+Work in progress.
