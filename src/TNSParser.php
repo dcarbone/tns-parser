@@ -18,27 +18,15 @@ namespace DCarbone;
  */
 
 /**
- * PHP 5.3 compatibility
- */
-if (interface_exists('\\JsonSerializable'))
-{
-    interface JsonSerializable extends \JsonSerializable {}
-}
-else
-{
-    interface JsonSerializable { public function jsonSerialize(); }
-}
-
-/**
  * Class TNSParser
  */
-class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, JsonSerializable
+class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, \JsonSerializable
 {
     /** @var array */
-    private $_entries = array();
+    private $_entries = [];
 
     /** @var array */
-    private $_searchMap = array();
+    private $_searchMap = [];
 
     /** @var bool */
     private $_sorted = false;
@@ -55,7 +43,7 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
     /** @var string */
     private $_currentValue = '';
     /** @var array */
-    private $_currentTree = array();
+    private $_currentTree = [];
     /** @var mixed */
     private $_currentPosition;
     /** @var string */
@@ -159,7 +147,7 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
     public function search($term, $caseSensitive = false)
     {
         $term = sprintf('{%s}S%s', $term, $caseSensitive ? '' : 'i');
-        $matched = array();
+        $matched = [];
         foreach($this->_searchMap as $name=>$values)
         {
             if (preg_match($term, $name))
@@ -357,11 +345,11 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
      */
     public function serialize()
     {
-        return serialize(array(
+        return serialize([
             $this->_entries,
             $this->_searchMap,
             $this->_sorted,
-        ));
+        ]);
     }
 
     /**
@@ -476,7 +464,7 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
         if (count($this->_currentTree) === 0)
         {
             $this->_currentName = trim($this->_currentKey);
-            $this->_searchMap[$this->_currentName] = array();
+            $this->_searchMap[$this->_currentName] = [];
         }
         $this->_currentTree[] = trim($this->_currentKey);
         $this->_currentKey = '';
@@ -522,9 +510,9 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
 
         if (null === $this->_currentPosition)
         {
-            $this->_currentPosition = array(
+            $this->_currentPosition = [
                 $localKey => $localValue
-            );
+            ];
             $this->_searchMap[$this->_currentName][] = $localValue;
             return;
         }
@@ -540,10 +528,10 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
                     $tmp = $this->_currentPosition;
                     array_pop($this->_currentTree);
                     $this->_updateCurrentPosition();
-                    $this->_currentPosition = array(
+                    $this->_currentPosition = [
                         $tmp,
-                        array($localKey => $localValue)
-                    );
+                        [$localKey => $localValue]
+                    ];
                     $this->_currentTree[] = $localKey;
                 }
                 else
@@ -559,7 +547,7 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
                     $i++;
                 }
                 if (false === isset($this->_currentPosition[$i]))
-                    $this->_currentPosition[$i] = array();
+                    $this->_currentPosition[$i] = [];
 
                 $this->_currentPosition[$i][$localKey] = $localValue;
             }
@@ -579,7 +567,7 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
         $this->_currentKey = '';
         $this->_currentValue = '';
         $this->_currentName = '';
-        $this->_currentTree = array();
+        $this->_currentTree = [];
     }
 
     private function _updateCurrentPosition()
@@ -594,8 +582,8 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
 
     private function _reset()
     {
-        $this->_entries = array();
-        $this->_searchMap = array();
+        $this->_entries = [];
+        $this->_searchMap = [];
         $this->_sorted = false;
 
         $this->_openCount = 0;
@@ -603,7 +591,7 @@ class TNSParser implements \Countable, \ArrayAccess, \Iterator, \Serializable, J
         $this->_inKey = true;
         $this->_currentKey = '';
         $this->_currentValue = '';
-        $this->_currentTree = array();
+        $this->_currentTree = [];
         $this->_currentPosition = &$this->_entries;
         $this->_currentName = '';
     }
