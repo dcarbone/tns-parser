@@ -229,7 +229,7 @@ var_export($entry);
 ```
 
 Under the covers, the searching system uses [preg_match](http://php.net/manual/en/function.preg-match.php), with the
-following structure: ` '{%s}Si' ` by default, with %s being replaced by your input.
+following structure: ` '{%s}S' ` by default, with %s being replaced by your input.
 
 If you wish for a case-sensitive search, pass in `true` as the 2nd parameter when executing `search()`.
 
